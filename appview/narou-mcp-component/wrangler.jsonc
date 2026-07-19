@@ -1,0 +1,43 @@
+{
+  "name": "kotodama-nr0uxk2p",
+  "main": "svelte/.svelte-kit/cloudflare/_worker.js",
+  "compatibility_date": "2025-03-17",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "nodejs_als"
+  ],
+  "vars": {
+    "APP_CAPABILITIES": "[\"createNovel\",\"createChapter\",\"generateChapter\",\"publishChapter\",\"createCharacter\",\"createWorldSetting\",\"getNovel\",\"listNovels\",\"getChapter\",\"listChapters\",\"searchNovels\"]",
+    "APP_DESCRIPTION": "narou — Web Novel Publishing Platform. Novel creation, AI chapter generation, character and world-building management.",
+    "APP_DISPLAY_NAME": "Narou",
+    "APP_FRAMEWORK": "sveltekit-edge-bff",
+    "APP_NANOID": "nr0uxk2p",
+    "APP_PERFORMER_TYPE": "service",
+    "APP_UI_TYPE": "yoro",
+    "AGENTGATEWAY_MCP_ROUTER_URL": "https://mcp.etzhayyim.com/xrpc/com.etzhayyim.mcp.message"
+  },
+  "rules": [
+    {
+      "type": "CompiledWasm",
+      "globs": [
+        "**/*.wasm"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "pattern": "nr0uxk2p.etzhayyim.com/*",
+      "zone_name": "etzhayyim.com"
+    },
+    {
+      "pattern": "narou.etzhayyim.com/*",
+      "zone_name": "etzhayyim.com"
+    }
+  ],
+  "assets": {
+    "directory": "./svelte/.svelte-kit/cloudflare/client",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  }
+}

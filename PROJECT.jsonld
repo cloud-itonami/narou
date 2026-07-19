@@ -1,0 +1,500 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Project",
+  "name": "Narou AI Platform (etzhayyim-project-narou)",
+  "status": "In Progress",
+  "identifier": "etzhayyim-project-narou",
+  "description": "小説・漫画・アニメの生成を支援する、AIネイティブな創作・配信プラットフォーム。Production AGIを活用し、テキストから動画までのメディアミックスをシームレスに行います。",
+  "hasPart": [
+    {
+      "@type": "CreativeWork",
+      "name": "Strategy",
+      "url": "STRATEGY.jsonld"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Capabilities",
+      "url": "capabilities.jsonld"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Activities",
+      "url": "activities.jsonld"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "UI/UX Design",
+      "url": "uiux.jsonld"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Refactor Structure",
+      "url": "apps/PROJECT_STRUCTURE.jsonld"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Refactor Guide",
+      "url": "README.md"
+    }
+  ],
+  "tasks": [
+    {
+      "status": "completed",
+      "task": "小説・漫画・アニメのエディタを統合した『Creator Studio』の設計"
+    },
+    {
+      "status": "completed",
+      "task": "メディアを横断したキャラクターのセマンティック整合性 (SCC) の実装概念の定義"
+    },
+    {
+      "status": "completed",
+      "task": "K8s Gateway API (HTTPRoute) による narou.etzhayyim.com のルーティング設計"
+    },
+    {
+      "status": "completed",
+      "task": "SvelteKit による Narou Studio のフロントエンド基本構造の実装"
+    },
+    {
+      "status": "completed",
+      "task": "メディアミックス・オーケストレーター (narouStore) の実装"
+    },
+    {
+      "status": "in_progress",
+      "task": "小説のチャプターから漫画ネームを自動生成するワークフローの構築"
+    },
+    {
+      "status": "in_progress",
+      "task": "AIボイスとモーション合成によるアニメーション生成パイプラインの統合"
+    },
+    {
+      "status": "completed",
+      "task": "ghosthacker/apps構造をベースにNarouプロジェクト構造を整理"
+    },
+    {
+      "status": "completed",
+      "task": "content JSON-LD自動生成スケジューラーの実装"
+    },
+    {
+      "status": "in_progress",
+      "task": "Drama生成パイプライン設計 (小説→脚本→絵コンテ→マンガドラマ変換)"
+    },
+    {
+      "status": "pending",
+      "task": "ジャンル・トロープテンプレートに基づくエピソード脚本バッチ生成の実装"
+    },
+    {
+      "status": "pending",
+      "task": "etzhayyim-project-drama への生成コンテンツ配信インターフェース (MCP gRPC) の実装"
+    },
+    {
+      "status": "in_progress",
+      "task": "ゲーム制作パイプライン設計 (小説世界観→GDD→GDScript→Godot Web Export→games.etzhayyim.com 配信)"
+    },
+    {
+      "status": "pending",
+      "task": "Story-to-Game シナリオ適応エンジンの実装 (プロット分岐→ゲームシナリオ変換)"
+    },
+    {
+      "status": "pending",
+      "task": "Godot 4 GDScript / シーン自動生成の実装 (LLM コード生成)"
+    },
+    {
+      "status": "pending",
+      "task": "SCC 準拠ゲームアセット合成の実装 (スプライト・UI テクスチャ生成)"
+    },
+    {
+      "status": "pending",
+      "task": "Godot Web Export ビルドパイプラインの実装 (headless export → .js/.wasm/.pck)"
+    },
+    {
+      "status": "pending",
+      "task": "etzhayyim-project-games への配信インターフェース (S3 sync + games.jsonld 更新) の実装"
+    }
+  ],
+  "rdfUnifiedDocuments": {
+    "@type": "Dataset",
+    "name": "Unified top-level RDF/JSON-LD documents",
+    "description": "Consolidated from project top-level *.jsonld files except PROJECT.jsonld.",
+    "documents": [
+      {
+        "fileName": "STRATEGY.jsonld",
+        "content": {
+          "@context": {
+            "dodaf": "http://dodcio.defense.gov/Library/DoDAF.aspx#",
+            "dct": "http://purl.org/dc/terms/"
+          },
+          "id": "https://etzhayyim.com/projects/etzhayyim-project-narou/strategy",
+          "type": "dodaf:StrategicView",
+          "dct:title": "Narou AI 戦略ビジョン",
+          "dct:description": "全ての物語を、テキスト、静止画、動画、インタラクティブゲームの4形態で同時に展開可能な『World-as-a-Service』の構築。",
+          "goals": [
+            "LLMによるプロット・執筆支援による制作速度の10倍化",
+            "ランキング上位作品をAGIアクターが自動的に漫画・アニメ化する自律型メディアミックス",
+            "iPadファーストな直感的インターフェースによるクリエイターの裾野拡大",
+            "etzhayyim-project-drama の上流生成エンジンとして、ショートドラマ用脚本・絵コンテをバッチ量産し配信パイプラインに供給",
+            "小説の世界観・キャラクター・シナリオ資産からGodotゲームを自動生成し、etzhayyim-project-games (games.etzhayyim.com) へ配信するゲーム制作パイプラインの構築"
+          ]
+        }
+      },
+      {
+        "fileName": "activities.jsonld",
+        "content": {
+          "@context": {
+            "dodaf": "http://dodcio.defense.gov/Library/DoDAF.aspx#",
+            "dct": "http://purl.org/dc/terms/",
+            "etzhayyim": "https://etzhayyim.com/schemas/"
+          },
+          "id": "https://etzhayyim.com/projects/etzhayyim-project-narou/activities",
+          "type": "dodaf:OperationalActivity",
+          "dct:title": "Narou AI 運用プロセス (OV-5b)",
+          "dct:description": "小説・漫画・アニメのシームレスな制作とメディアミックス展開のプロセス定義。",
+          "etzhayyim:processes": [
+            {
+              "name": "Novel to Manga Workflow",
+              "steps": [
+                {
+                  "activity": "Text Analysis & Scene Extraction",
+                  "performer": "etzhayyim-performer-sys-etzhayyim-actors-pba7d22f-svc-agi-writer",
+                  "action": "小説のチャプターから視覚化すべき主要シーンと対話を抽出する。",
+                  "input": "Novel Chapter Text",
+                  "output": "Scene Metadata"
+                },
+                {
+                  "activity": "Automatic Name (Draft) Generation",
+                  "performer": "etzhayyim-performer-sys-etzhayyim-actors-pba7d22f-svc-agi-artist",
+                  "action": "抽出されたシーンに基づき、漫画のコマ割りと構図（ネーム）を自動生成する。",
+                  "input": "Scene Metadata",
+                  "output": "Manga Name Draft"
+                }
+              ]
+            },
+            {
+              "name": "Manga to Anime Workflow",
+              "steps": [
+                {
+                  "activity": "Storyboard to Scene Synthesis",
+                  "performer": "etzhayyim-performer-sys-etzhayyim-actors-pba7d22f-svc-agi-animator",
+                  "action": "漫画のネームまたは完成原稿から、アニメーションのカット割りとカメラワークを生成する。",
+                  "input": "Manga Panels",
+                  "output": "Animated Scene Layout"
+                },
+                {
+                  "activity": "Voice & Sound Synthesis",
+                  "performer": "etzhayyim-performer-sys-etzhayyim-actors-pba7d22f-svc-agi-director",
+                  "action": "台詞をAIボイスで生成し、BGM・効果音をシーンに合わせてミキシングする。",
+                  "input": "Dialogue Script / Scene Timing",
+                  "output": "Audio Master Track"
+                }
+              ]
+            },
+            {
+              "name": "Autonomous Publishing & Distribution",
+              "steps": [
+                {
+                  "activity": "Multi-Format Packaging",
+                  "performer": "etzhayyim-performer-sys-etzhayyim-actors-pba7d22f-svc-agi-director",
+                  "action": "小説(EPUB)、漫画(Webtoon)、アニメ(MP4)を各配信フォーマットに変換・パッケージングする。",
+                  "input": "Creative Assets",
+                  "output": "Distribution Packages"
+                },
+                {
+                  "activity": "Platform Synchronization",
+                  "performer": "etzhayyim-performer-sys-etzhayyim-actors-pba7d22f-svc-procs-narou-release",
+                  "action": "narou.etzhayyim.com への自動投稿とSNS連携を実行する。",
+                  "input": "Distribution Packages",
+                  "output": "Live Content"
+                }
+              ]
+            },
+            {
+              "name": "Drama Script Batch Generation Pipeline",
+              "description": "etzhayyim-project-drama の上流として、ジャンル・トロープ指定に基づくエピソード脚本をバッチ生成する。",
+              "steps": [
+                {
+                  "activity": "Genre & Trope Configuration",
+                  "performer": "narou-mcp-component",
+                  "action": "ターゲットジャンル (異世界転生、復讐劇、恋愛等) とトロープ (扮豬吃虎、逆転劇等) を指定し、シリーズ設定 (世界観、主要キャラクター、話数) を生成。",
+                  "input": "Genre Template / Trope Config",
+                  "output": "Series Blueprint (JSON-LD)"
+                },
+                {
+                  "activity": "Episode Script Batch Generation",
+                  "performer": "etzhayyim-performer-sys-etzhayyim-actors-pba7d22f-svc-agi-writer",
+                  "action": "Series Blueprintに基づき、50-100話分のエピソード脚本をLLMでバッチ生成。各話はシーン記述・台詞・ト書き・クリフハンガー構造を含む。",
+                  "input": "Series Blueprint",
+                  "output": "Episode Scripts Bundle (JSON-LD)"
+                },
+                {
+                  "activity": "Visual Storyboard Generation",
+                  "performer": "etzhayyim-performer-sys-etzhayyim-actors-pba7d22f-svc-agi-artist",
+                  "action": "各エピソードの脚本からシーンを分割し、パネル画像 (縦型フォーマット) を生成。キャラクター整合性 (SCC) を維持。",
+                  "input": "Episode Scripts Bundle",
+                  "output": "Storyboard Panel Sequences (PNG)"
+                },
+                {
+                  "activity": "Motion-Ready Export",
+                  "performer": "narou-mcp-component",
+                  "action": "パネルシーケンスにカメラ指示 (パン、ズーム、トランジション) とタイミングメタデータを付加し、Drama配信用フォーマットで出力。",
+                  "input": "Storyboard Panel Sequences",
+                  "output": "Motion-Ready Package (→ etzhayyim-project-drama)"
+                }
+              ]
+            },
+            {
+              "name": "Game Production Pipeline",
+              "description": "小説の世界観・キャラクター・シナリオ資産からGodotゲームプロジェクトを自動生成し、etzhayyim-project-games (games.etzhayyim.com) へ配信する。",
+              "steps": [
+                {
+                  "activity": "Game Design Document Generation",
+                  "performer": "narou-mcp-component",
+                  "action": "小説の世界観 (world.jsonld)、キャラクター (characters.jsonld)、プロット構造からゲームジャンルを判定し、GDD (ゲームデザインドキュメント) を JSON-LD で生成。ジャンル候補: ビジュアルノベル、.io マルチプレイヤー、RPG、パズル、シミュレーション。",
+                  "input": "World / Characters / Plot (JSON-LD)",
+                  "output": "Game Design Document (JSON-LD)"
+                },
+                {
+                  "activity": "Story-to-Game Scenario Adaptation",
+                  "performer": "etzhayyim-performer-sys-etzhayyim-actors-pba7d22f-svc-agi-writer",
+                  "action": "小説のプロット分岐点・キャラクター関係・エピソード構造をゲームシナリオに変換。ビジュアルノベルの場合は選択肢分岐ツリー、RPGの場合はクエスト依存グラフ、.ioゲームの場合はメカニクスルールセットを生成。SCC によりキャラクター整合性を維持。",
+                  "input": "Game Design Document + Episode Scripts",
+                  "output": "Game Scenario Bundle (JSON-LD)"
+                },
+                {
+                  "activity": "GDScript Code Generation",
+                  "performer": "etzhayyim-performer-sys-etzhayyim-actors-pba7d22f-svc-agi-game-designer",
+                  "action": "GDD とシナリオに基づき、Godot 4 の project.godot、シーン (.tscn)、スクリプト (.gd) を LLM で生成。ゲームメカニクス、UI レイアウト、スコアシステム、入力ハンドラを含む。",
+                  "input": "Game Design Document + Game Scenario Bundle",
+                  "output": "Godot Project Source (project.godot + scenes/ + scripts/)"
+                },
+                {
+                  "activity": "Game Asset Synthesis",
+                  "performer": "etzhayyim-performer-sys-etzhayyim-actors-pba7d22f-svc-agi-asset-synth",
+                  "action": "キャラクターの SCC 準拠スプライト、背景、UI テクスチャ、アイコンを生成し Godot の import 形式 (.png + .import) に変換。キャラクター外見は characters.jsonld の SCC メタデータに従う。",
+                  "input": "Characters / World (JSON-LD) + Game Design Document",
+                  "output": "Game Assets (sprites/, textures/, ui/)"
+                },
+                {
+                  "activity": "Godot Web Export Build",
+                  "performer": "narou-mcp-component",
+                  "action": "生成された Godot プロジェクトを Godot 4 headless でエクスポート。Web Export テンプレートにより .js (loader)、.wasm (engine)、.pck (game data) を生成。JavaScriptBridge によるスコア送信コールバック (window.onGameScore) を自動注入。",
+                  "input": "Godot Project Source + Game Assets",
+                  "output": "Web Export Bundle (.js + .wasm + .pck)"
+                },
+                {
+                  "activity": "Game Distribution to Arcade",
+                  "performer": "narou-mcp-component",
+                  "action": "Web Export Bundle を Linode Object Storage (etzhayyim-static-sites) の games-7m8oocsn/static/games/{game-id}/ に S3 sync でアップロード。games.jsonld のカタログエントリを更新し status を 'Playable' に変更。games.etzhayyim.com/play/{game-id} で即座にプレイ可能にする。",
+                  "input": "Web Export Bundle + Game Metadata",
+                  "output": "Live Game on games.etzhayyim.com (→ etzhayyim-project-games)"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "fileName": "capabilities.jsonld",
+        "content": {
+          "@context": {
+            "dodaf": "http://dodcio.defense.gov/Library/DoDAF.aspx#",
+            "dct": "http://purl.org/dc/terms/"
+          },
+          "id": "https://etzhayyim.com/projects/etzhayyim-project-narou/capabilities",
+          "type": "dodaf:Capability",
+          "dct:title": "Narou AI 機能カタログ (CV-2)",
+          "capabilities": [
+            {
+              "name": "Unified Creative Studio (C1)",
+              "description": "小説・漫画・アニメの制作環境を一つのワークスペースに統合。"
+            },
+            {
+              "name": "Cross-Media Semantic Consistency (C2)",
+              "description": "媒体を跨いでもキャラクターの容姿、性格、設定を一貫させるAI制御機能。"
+            },
+            {
+              "name": "Autonomous Media Mix Pipeline (C3)",
+              "description": "小説から漫画ネーム、アニメ絵コンテへの自動変換と生成。"
+            },
+            {
+              "name": "Social Feedback Integration (C4)",
+              "description": "読者のフィードバックをリアルタイムに制作工程に反映する分析機能。"
+            },
+            {
+              "name": "Drama Script Generation Pipeline (C5)",
+              "description": "ジャンル・トロープ指定に基づき、50-100話構成のエピソード脚本をLLMでバッチ生成。etzhayyim-project-drama の上流として機能。"
+            },
+            {
+              "name": "Panel-to-Motion Storyboard Export (C6)",
+              "description": "生成済み漫画パネルをモーション合成用のシーケンスとカメラ指示付きで出力。Drama配信フォーマットに最適化。"
+            },
+            {
+              "name": "Game Production Pipeline (C7)",
+              "description": "小説の世界観・キャラクター・シナリオ資産からGodot Engineゲームプロジェクトを自動生成するパイプライン。ゲームデザインドキュメント (GDD) 生成、GDScript コード生成、2Dスプライト/UIアセット合成、Godot Web Export (.js/.wasm/.pck) ビルドを一貫して実行し、etzhayyim-project-games (games.etzhayyim.com) へ配信する。"
+            },
+            {
+              "name": "Story-to-Game Scenario Adaptation (C8)",
+              "description": "小説のプロット構造・分岐点・キャラクター関係をゲームシナリオ (ビジュアルノベル分岐、RPGクエスト、.ioゲームメカニクス) に変換するセマンティック適応機能。SCC (Cross-Media Semantic Consistency) によりキャラクター整合性を維持。"
+            }
+          ]
+        }
+      },
+      {
+        "fileName": "scheduler.jsonld",
+        "content": {
+          "@context": [
+            "https://schema.org/",
+            {
+              "etzhayyim": "https://etzhayyim.com/schemas/",
+              "capabilities": "etzhayyim:capabilities",
+              "survivalIndicators": "etzhayyim:survivalIndicators",
+              "scheduler": "etzhayyim:scheduler",
+              "milestones": "etzhayyim:milestones",
+              "blockers": "etzhayyim:blockers",
+              "dependsOn": {
+                "@id": "etzhayyim:dependsOn",
+                "@type": "@id"
+              },
+              "ingestKey": "etzhayyim:ingestKey",
+              "window": "etzhayyim:window",
+              "valueUpdatedAt": "etzhayyim:valueUpdatedAt"
+            }
+          ],
+          "@type": "CreativeWork",
+          "name": "Narou AI Platform (etzhayyim-project-narou) Scheduler",
+          "identifier": "etzhayyim-project-narou/scheduler",
+          "description": "Project schedule (milestones) and blockers.",
+          "dateCreated": "2026-02-15T04:25:26+00:00",
+          "milestones": [
+            {
+              "@type": "CreativeWork",
+              "name": "小説のチャプターから漫画ネームを自動生成するワークフローの構築",
+              "status": "Planned",
+              "dueDate": "2026-02-22"
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "AIボイスとモーション合成によるアニメーション生成パイプラインの統合",
+              "status": "Planned",
+              "dueDate": "2026-03-01"
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "Drama脚本バッチ生成パイプラインの実装 (ジャンル・トロープテンプレート)",
+              "status": "Planned",
+              "dueDate": "2026-03-08"
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "Motion-Ready Export (パネル→カメラ指示付きシーケンス) の実装",
+              "status": "Planned",
+              "dueDate": "2026-03-15"
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "etzhayyim-project-drama MCP gRPC インターフェース連携",
+              "status": "Planned",
+              "dueDate": "2026-03-22"
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "ゲーム制作パイプライン設計 (C7/C8 + proto + WIT)",
+              "status": "In Progress",
+              "dueDate": "2026-02-22"
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "GDD 自動生成エンジン実装 (小説世界観→ゲームデザインドキュメント)",
+              "status": "Planned",
+              "dueDate": "2026-03-01"
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "Story-to-Game シナリオ適応 + GDScript コード生成",
+              "status": "Planned",
+              "dueDate": "2026-03-15"
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "SCC 準拠ゲームアセット合成 + Godot Web Export ビルド",
+              "status": "Planned",
+              "dueDate": "2026-03-29"
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "games.etzhayyim.com 配信パイプライン (S3 sync + カタログ更新)",
+              "status": "Planned",
+              "dueDate": "2026-04-05"
+            }
+          ],
+          "blockers": [],
+          "dateModified": "2026-02-18T00:00:00Z"
+        }
+      },
+      {
+        "fileName": "uiux.jsonld",
+        "content": {
+          "@context": "https://schema.org/",
+          "@type": "CreativeWork",
+          "name": "Narou AI UI/UX Design",
+          "description": "iPad-first integrated creative environment for Novels, Manga, and Anime.",
+          "etzhayyim:designPrinciples": [
+            "Apple Human Interface Guidelines (iPad focused)",
+            "Creative Flow: Multi-modal content creation without context switching",
+            "Seamless scaling from text to animation",
+            "Visual feedback loop for AI generation"
+          ],
+          "etzhayyim:uiComponents": [
+            {
+              "name": "Creator Studio Dashboard",
+              "type": "IntegratedDashboard",
+              "features": [
+                "Project health overview",
+                "Cross-media progress tracking (ProductionBoard)",
+                "Resource usage monitoring for AI models"
+              ]
+            },
+            {
+              "name": "Novel Editor (Edra-based)",
+              "type": "RichTextEditor",
+              "features": [
+                "Distraction-free focus mode",
+                "Semantic tagging for characters and locations",
+                "AI-assisted plot brainstorming"
+              ]
+            },
+            {
+              "name": "Manga Canvas",
+              "type": "GraphicEditor",
+              "features": [
+                "AI layout suggestions from text",
+                "Character consistency palette (LoRA selection)",
+                "Dynamic panel resizing"
+              ]
+            },
+            {
+              "name": "Anime Director Timeline",
+              "type": "TimelineEditor",
+              "features": [
+                "Multi-track sync (Video, Audio, Subtitles)",
+                "Real-time AI voice generation preview",
+                "Motion interpolation controls"
+              ]
+            }
+          ],
+          "etzhayyim:uxFlows": [
+            {
+              "name": "One-Click Media Mix Flow",
+              "steps": [
+                "Write novel chapter",
+                "Select 'Generate Manga Name'",
+                "Review and adjust AI-generated layouts",
+                "Select 'Convert to Anime Clip'",
+                "Sync AI voice with generated animation",
+                "Publish across all formats"
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

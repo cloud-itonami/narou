@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Dataset",
+  "name": "Narou Generated Content Bundle",
+  "dateModified": "2026-02-15T01:07:30.340183+00:00",
+  "distribution": {
+    "@type": "DataDownload",
+    "encodingFormat": "application/ld+json",
+    "contentUrl": "projects/etzhayyim-project-narou/content/generated/content.bundle.jsonld"
+  },
+  "hasPart": [
+    {
+      "@type": "CreativeWork",
+      "@id": "https://narou.etzhayyim.com/content/chapter-001",
+      "name": "第一話: 霧の朝、主人公は生成された記憶の断片に違和感を覚える。",
+      "inLanguage": "ja",
+      "dateModified": "2026-02-15T01:07:30.340162+00:00",
+      "identifier": "chapter-001.txt",
+      "sha256": "b9803bda4f79c4caac08709c9ecebca07c4d127179105907da1a9aa79b214ba8",
+      "wordCount": 4,
+      "text": "第一話: 霧の朝、主人公は生成された記憶の断片に違和感を覚える。\nNarou Studioは小説・漫画・アニメの3媒体に展開するための創作オーケストレーターとして起動する。\n"
+    }
+  ]
+}

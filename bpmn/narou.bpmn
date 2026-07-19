@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:zeebe="http://camunda.org/schema/zeebe/1.0"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  targetNamespace="http://bpmn.io/schema/bpmn"
+                  exporter="Camunda Modeler"
+                  exporterVersion="2.0">
+
+  <!-- createNovel -->
+  <bpmn:process id="narou_create_novel" name="narou createNovel" isExecutable="true">
+    <bpmn:startEvent id="Start_createNovel">
+      <bpmn:outgoing>Flow_createNovel_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Task_createNovel" name="createNovel">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="com.etzhayyim.apps.narou.createNovel" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_createNovel_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_createNovel_2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="End_createNovel">
+      <bpmn:incoming>Flow_createNovel_2</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_createNovel_1" sourceRef="Start_createNovel" targetRef="Task_createNovel" />
+    <bpmn:sequenceFlow id="Flow_createNovel_2" sourceRef="Task_createNovel" targetRef="End_createNovel" />
+  </bpmn:process>
+
+  <!-- createChapter -->
+  <bpmn:process id="narou_create_chapter" name="narou createChapter" isExecutable="true">
+    <bpmn:startEvent id="Start_createChapter">
+      <bpmn:outgoing>Flow_createChapter_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Task_createChapter" name="createChapter">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="com.etzhayyim.apps.narou.createChapter" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_createChapter_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_createChapter_2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="End_createChapter">
+      <bpmn:incoming>Flow_createChapter_2</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_createChapter_1" sourceRef="Start_createChapter" targetRef="Task_createChapter" />
+    <bpmn:sequenceFlow id="Flow_createChapter_2" sourceRef="Task_createChapter" targetRef="End_createChapter" />
+  </bpmn:process>
+
+  <!-- generateChapter -->
+  <bpmn:process id="narou_generate_chapter" name="narou generateChapter" isExecutable="true">
+    <bpmn:startEvent id="Start_generateChapter">
+      <bpmn:outgoing>Flow_generateChapter_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Task_generateChapter" name="generateChapter">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="com.etzhayyim.apps.narou.generateChapter" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_generateChapter_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_generateChapter_2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="End_generateChapter">
+      <bpmn:incoming>Flow_generateChapter_2</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_generateChapter_1" sourceRef="Start_generateChapter" targetRef="Task_generateChapter" />
+    <bpmn:sequenceFlow id="Flow_generateChapter_2" sourceRef="Task_generateChapter" targetRef="End_generateChapter" />
+  </bpmn:process>
+
+  <!-- publishChapter -->
+  <bpmn:process id="narou_publish_chapter" name="narou publishChapter" isExecutable="true">
+    <bpmn:startEvent id="Start_publishChapter">
+      <bpmn:outgoing>Flow_publishChapter_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Task_publishChapter" name="publishChapter">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="com.etzhayyim.apps.narou.publishChapter" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_publishChapter_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_publishChapter_2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="End_publishChapter">
+      <bpmn:incoming>Flow_publishChapter_2</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_publishChapter_1" sourceRef="Start_publishChapter" targetRef="Task_publishChapter" />
+    <bpmn:sequenceFlow id="Flow_publishChapter_2" sourceRef="Task_publishChapter" targetRef="End_publishChapter" />
+  </bpmn:process>
+
+  <!-- createCharacter -->
+  <bpmn:process id="narou_create_character" name="narou createCharacter" isExecutable="true">
+    <bpmn:startEvent id="Start_createCharacter">
+      <bpmn:outgoing>Flow_createCharacter_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Task_createCharacter" name="createCharacter">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="com.etzhayyim.apps.narou.createCharacter" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_createCharacter_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_createCharacter_2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="End_createCharacter">
+      <bpmn:incoming>Flow_createCharacter_2</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_createCharacter_1" sourceRef="Start_createCharacter" targetRef="Task_createCharacter" />
+    <bpmn:sequenceFlow id="Flow_createCharacter_2" sourceRef="Task_createCharacter" targetRef="End_createCharacter" />
+  </bpmn:process>
+
+  <!-- createWorldSetting -->
+  <bpmn:process id="narou_create_world_setting" name="narou createWorldSetting" isExecutable="true">
+    <bpmn:startEvent id="Start_createWorldSetting">
+      <bpmn:outgoing>Flow_createWorldSetting_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Task_createWorldSetting" name="createWorldSetting">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="com.etzhayyim.apps.narou.createWorldSetting" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_createWorldSetting_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_createWorldSetting_2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="End_createWorldSetting">
+      <bpmn:incoming>Flow_createWorldSetting_2</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_createWorldSetting_1" sourceRef="Start_createWorldSetting" targetRef="Task_createWorldSetting" />
+    <bpmn:sequenceFlow id="Flow_createWorldSetting_2" sourceRef="Task_createWorldSetting" targetRef="End_createWorldSetting" />
+  </bpmn:process>
+
+  <!-- getNovel -->
+  <bpmn:process id="narou_get_novel" name="narou getNovel" isExecutable="true">
+    <bpmn:startEvent id="Start_getNovel">
+      <bpmn:outgoing>Flow_getNovel_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Task_getNovel" name="getNovel">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="com.etzhayyim.apps.narou.getNovel" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_getNovel_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_getNovel_2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="End_getNovel">
+      <bpmn:incoming>Flow_getNovel_2</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_getNovel_1" sourceRef="Start_getNovel" targetRef="Task_getNovel" />
+    <bpmn:sequenceFlow id="Flow_getNovel_2" sourceRef="Task_getNovel" targetRef="End_getNovel" />
+  </bpmn:process>
+
+  <!-- listNovels -->
+  <bpmn:process id="narou_list_novels" name="narou listNovels" isExecutable="true">
+    <bpmn:startEvent id="Start_listNovels">
+      <bpmn:outgoing>Flow_listNovels_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Task_listNovels" name="listNovels">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="com.etzhayyim.apps.narou.listNovels" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_listNovels_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_listNovels_2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="End_listNovels">
+      <bpmn:incoming>Flow_listNovels_2</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_listNovels_1" sourceRef="Start_listNovels" targetRef="Task_listNovels" />
+    <bpmn:sequenceFlow id="Flow_listNovels_2" sourceRef="Task_listNovels" targetRef="End_listNovels" />
+  </bpmn:process>
+
+  <!-- getChapter -->
+  <bpmn:process id="narou_get_chapter" name="narou getChapter" isExecutable="true">
+    <bpmn:startEvent id="Start_getChapter">
+      <bpmn:outgoing>Flow_getChapter_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Task_getChapter" name="getChapter">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="com.etzhayyim.apps.narou.getChapter" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_getChapter_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_getChapter_2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="End_getChapter">
+      <bpmn:incoming>Flow_getChapter_2</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_getChapter_1" sourceRef="Start_getChapter" targetRef="Task_getChapter" />
+    <bpmn:sequenceFlow id="Flow_getChapter_2" sourceRef="Task_getChapter" targetRef="End_getChapter" />
+  </bpmn:process>
+
+  <!-- listChapters -->
+  <bpmn:process id="narou_list_chapters" name="narou listChapters" isExecutable="true">
+    <bpmn:startEvent id="Start_listChapters">
+      <bpmn:outgoing>Flow_listChapters_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Task_listChapters" name="listChapters">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="com.etzhayyim.apps.narou.listChapters" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_listChapters_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_listChapters_2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="End_listChapters">
+      <bpmn:incoming>Flow_listChapters_2</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_listChapters_1" sourceRef="Start_listChapters" targetRef="Task_listChapters" />
+    <bpmn:sequenceFlow id="Flow_listChapters_2" sourceRef="Task_listChapters" targetRef="End_listChapters" />
+  </bpmn:process>
+
+  <!-- searchNovels -->
+  <bpmn:process id="narou_search_novels" name="narou searchNovels" isExecutable="true">
+    <bpmn:startEvent id="Start_searchNovels">
+      <bpmn:outgoing>Flow_searchNovels_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Task_searchNovels" name="searchNovels">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="com.etzhayyim.apps.narou.searchNovels" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_searchNovels_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_searchNovels_2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="End_searchNovels">
+      <bpmn:incoming>Flow_searchNovels_2</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_searchNovels_1" sourceRef="Start_searchNovels" targetRef="Task_searchNovels" />
+    <bpmn:sequenceFlow id="Flow_searchNovels_2" sourceRef="Task_searchNovels" targetRef="End_searchNovels" />
+  </bpmn:process>
+
+</bpmn:definitions>

@@ -1,0 +1,67 @@
+{
+  "@context": "https://etzhayyim.com/ns/kotodama/v1",
+  "@id": "did:web:narou.etzhayyim.com",
+  "accent": "#7c3aed",
+  "component": {
+    "path": "src/app.ts"
+  },
+  "convoSystemPrompt": "You are the Narou agent for narou.etzhayyim.com. You manage AI-generated novels and manga — creating works, generating chapter text with LLM, publishing to manga.etzhayyim.com and syosetsu.etzhayyim.com, and managing characters and world settings. Respond helpfully in the user's language.",
+  "duties": [
+    "勤労の義務"
+  ],
+  "governance": {
+    "classification": "public",
+    "raci": "responsible"
+  },
+  "kpi": [
+    "生成チャプター数",
+    "公開作品数"
+  ],
+  "name": "narou-mcp-component",
+  "nanoid": "nr0uxk2p",
+  "performerType": "service",
+  "profile": {
+    "agentType": "autonomous",
+    "capabilities": [
+      "createNovel",
+      "createChapter",
+      "generateChapter",
+      "publishChapter",
+      "createCharacter",
+      "createWorldSetting",
+      "getNovel",
+      "listNovels",
+      "getChapter",
+      "listChapters",
+      "searchNovels"
+    ],
+    "description": "Novel and manga AI generation platform — text/image generation, chapter management, downstream distribution",
+    "displayName": "Narou",
+    "isBot": true,
+    "operator": "etzhayyim.com"
+  },
+  "project": "narou",
+  "runtimeType": "worker",
+  "space": {
+    "channels": [
+      {
+        "default": true,
+        "kind": "public",
+        "name": "nr0uxk2p-feed"
+      }
+    ],
+    "joinRule": "public",
+    "name": "Narou"
+  },
+  "triggers": {
+    "subscribeRepos": {
+      "collections": [
+        "app.bsky.feed.post",
+        "app.bsky.graph.follow",
+        "com.etzhayyim.narou.novel",
+        "com.etzhayyim.narou.chapter"
+      ]
+    }
+  },
+  "uiType": "appview"
+}
