@@ -15,7 +15,7 @@
   injected via state to override (used in tests). The python per-node
   RetryPolicy(max_attempts=2) has no langgraph-clj add-node equivalent and is
   dropped (the probe is already best-effort + fail-soft)."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [langgraph.graph :as g]
             [lg-narou.audit :as audit])
   #?(:clj (:import [java.net Socket InetSocketAddress])))

@@ -1,7 +1,7 @@
 (ns lg-narou.test-graphs
   "Node-behavior tests for the ported health + agent_chat StateGraphs."
   (:require [clojure.test :refer [deftest is]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [langgraph.graph :as g]
             [lg-narou.graphs.health :as health]
             [lg-narou.graphs.agent-chat :as chat]))

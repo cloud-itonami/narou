@@ -22,7 +22,7 @@
      unless a checkpointer is later wired (kotoba/datomic-isomorphic, ADR-2605312345).
    - /runs/stream computes events then flushes them as SSE (not incrementally
      streamed). JSON output keys are kebab (clj state) rather than snake."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [langgraph.graph :as g]
             [lg-narou.graphs.health :as health]
             [lg-narou.graphs.agent-chat :as agent-chat]

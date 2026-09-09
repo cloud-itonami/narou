@@ -14,7 +14,7 @@
   residency anyway. `start-cron` therefore returns nil when disabled or when no
   specs are present — behaviour-equivalent for narou's empty `crons`. The
   fire-input logic + spec filtering are faithful and covered by tests."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             #?(:clj [cheshire.core :as json])))
 
 (def ^:dynamic *config* {:enabled? true :langgraph-json "/app/langgraph.json"})
