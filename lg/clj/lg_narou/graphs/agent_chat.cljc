@@ -16,7 +16,7 @@
    - The python RetryPolicy(max_attempts=3) on the llm node has no langgraph-clj
      add-node equivalent and is dropped (error is returned in state, not raised).
    - The HTTP post fn is injectable via state `:llm-post` for tests (no network)."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [langgraph.graph :as g]
             [lg-narou.audit :as audit]
             #?(:clj [cheshire.core :as json])))

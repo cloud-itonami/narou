@@ -1,7 +1,7 @@
 (ns lg-narou.test-server
   "clojure.test port of tests/test_smoke.py (server / NSID / langgraph.json parity)."
   (:require [clojure.test :refer [deftest is]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [cheshire.core :as json]
             [langchain.runnable :as r]
             [langgraph.graph :as g]

@@ -7,7 +7,7 @@
 ;;
 ;;   bb run_tests.clj          ; from 60-apps/etzhayyim-project-narou/lg/
 ;;   bb test                   ; via the scoped bb.edn task
-(require '[babashka.http-client :as http]
+(require '[kotoba.lang.text] '[babashka.http-client :as http]
          '[clojure.test :as t]
          '[org.httpkit.server :as httpkit]
          '[lg-narou.audit :as audit]
@@ -26,7 +26,7 @@
                             :disabled? (= "1" (env "LG_AUDIT_DISABLED" "0"))}
             audit/*http-post* http/post
             cron/*config* {:enabled? (contains? #{"1" "true" "yes"}
-                                                 (clojure.string/lower-case (env "LG_CRON_ENABLED" "true")))
+                                                 (kotoba.lang.text/lower (env "LG_CRON_ENABLED" "true")))
                            :langgraph-json (env "LANGGRAPH_JSON" "/app/langgraph.json")}
             chat/*config* {:url (env "VLLM_URL" "http://127.0.0.1:4000/v1")
                            :model (env "VLLM_MODEL" "tier0-general")
