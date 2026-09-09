@@ -1,3 +1,17 @@
+// SVELTEKIT-BACKEND-PRESERVED: moved out of svelte/ during the cljs migration; not wired.
+//
+// Original path: appview/narou-mcp-component/svelte/src/routes/xrpc/[...path]/+server.ts
+// Moved byte-identical (except this header) as part of the Svelte -> reagent +
+// re-frame frontend migration (ADR-2608260900). This is a SvelteKit route
+// handler, i.e. a BACKEND endpoint that proxied POST /xrpc/* to the
+// AgentGateway MCP router — not frontend code, and out of scope for a
+// frontend-only migration. It still imports SvelteKit-only symbols
+// (`@sveltejs/kit`, `./$types`) that no longer resolve now that svelte/ is
+// gone, so it will not compile as-is and is NOT imported by src/app.ts (the
+// live Cloudflare Worker entry point). Reviving this handler — porting it
+// off SvelteKit types and wiring it into src/app.ts — is an open product
+// decision for whoever owns the XRPC proxy behavior, not something this
+// migration decides on its own.
 import { json, type RequestEvent } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
