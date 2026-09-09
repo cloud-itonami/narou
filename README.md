@@ -28,7 +28,7 @@ etzhayyim Charter Compliance Rider v3.1（`NOTICE`）。
 | `kotoba/` | 11 kotoba commands の TS reference 実装 + vitest（`test/narou.test.ts`、18 tests） |
 | `lg/` | LangGraph graphs + server の **langgraph-clj port**（ADR-2606280030。clj twin が canonical、python twin は削除済み。`lg/clj/README.md`） |
 | `xrpc-adapter/` | kotoba commands を XRPC endpoint として公開する Cloudflare Worker（TS） |
-| `appview/` | App 版への段階移行の配置先（`narou-mcp-component`: svelte + wrangler） |
+| `appview/` | App 版への段階移行の配置先（`narou-mcp-component`: reagent + re-frame（cljs、jp-go-dds） + wrangler） |
 | `scripts/` | `content/sources/*.txt` → JSON-LD bundle の生成器（python、`docs/operator-quickstart.md` 参照） |
 | `content/` | `sources/`（原稿 txt）と `generated/`（JSON-LD bundle、生成物） |
 | `bpmn/` | 生成ワークフローの BPMN2 定義（`narou.bpmn`） |

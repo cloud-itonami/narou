@@ -1,6 +1,5 @@
 {
   "name": "kotodama-nr0uxk2p",
-  "main": "svelte/.svelte-kit/cloudflare/_worker.js",
   "compatibility_date": "2025-03-17",
   "compatibility_flags": [
     "nodejs_compat",
@@ -10,7 +9,7 @@
     "APP_CAPABILITIES": "[\"createNovel\",\"createChapter\",\"generateChapter\",\"publishChapter\",\"createCharacter\",\"createWorldSetting\",\"getNovel\",\"listNovels\",\"getChapter\",\"listChapters\",\"searchNovels\"]",
     "APP_DESCRIPTION": "narou — Web Novel Publishing Platform. Novel creation, AI chapter generation, character and world-building management.",
     "APP_DISPLAY_NAME": "Narou",
-    "APP_FRAMEWORK": "sveltekit-edge-bff",
+    "APP_FRAMEWORK": "cljs-reagent-re-frame-jp-go-dds",
     "APP_NANOID": "nr0uxk2p",
     "APP_PERFORMER_TYPE": "service",
     "APP_UI_TYPE": "yoro",
@@ -35,7 +34,7 @@
     }
   ],
   "assets": {
-    "directory": "./svelte/.svelte-kit/cloudflare/client",
+    "directory": "./cljs/public",
     "binding": "ASSETS",
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "none"
