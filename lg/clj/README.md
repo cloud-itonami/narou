@@ -30,9 +30,9 @@ deleted with the python package (its only importer was the deleted `server.py`).
 ## Run (bb)
 
 ```
-bb run_tests.clj        # 29 tests / 52 assertions (clojure.test)
-bb test                 # same, via the scoped bb.edn task
-bb server 8080          # boot the httpkit server (= server.py FastAPI)
+kbb run_tests.cljk        # 29 tests / 52 assertions (clojure.test)
+kbb -M:test                 # same, via the scoped bb.edn task
+kbb -M:server 8080          # boot the httpkit server (= server.py FastAPI)
 ```
 
 ## Faithful-port deviations (same topology, same endpoints)

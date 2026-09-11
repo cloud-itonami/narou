@@ -69,7 +69,7 @@ npm test
 
 ## ここに書いていないもの（未検証 —— 書いていないのは怠慢ではなく境界）
 
-- **`lg/` の server / test**: scoped `bb.edn`（`bb test` / `bb server`）だが、
+- **`lg/` の server / test**: scoped `bb.edn`（`kbb -M:test` / `kbb -M:server`）だが、
   この workspace は script host として bb を退役済み（ADR-2607173000）で、
   今回は踏んでいない。エントリポイントは `lg/clj/README.md` が正本。
 - **`xrpc-adapter/` / `appview/narou-mcp-component` の deploy**: Cloudflare
