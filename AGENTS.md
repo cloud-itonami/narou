@@ -82,7 +82,7 @@ Matrix protocol + BPMN2 で生成ワークフローを制御し、作品ごと�
 | `narou_generation_tasks_current` | 生成タスクキュー + BPMN instance 追跡 |
 | `narou_image_assets_current` | 画像アセットメタデータ |
 
-RLS: 全テーブルに `org_id`, `user_id`, `actor_id` 必須 (詳細: `60-apps/CLAUDE.md`)。
+RLS: 全テーブルに `org_id`, `user_id`, `actor_id` 必須 (詳細: `60-apps/AGENTS.md`)。
 
 ## API Endpoints
 
@@ -108,5 +108,5 @@ curl -X POST https://nr0uxk2p.etzhayyim.com/xrpc/etzhayyim.narou.v1.NarouQuerySe
 
 ## LLM Override ルール
 
-OpenRouter claude-opus-4-6 は `60-apps/CLAUDE.md` §Public LLM Standard の override 扱い。
+OpenRouter claude-opus-4-6 は `60-apps/AGENTS.md` §Public LLM Standard の override 扱い。
 narou 以外のコードにこの override を伝播しない。
