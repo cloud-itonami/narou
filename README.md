@@ -5,7 +5,7 @@
 小説・漫画自動生成プラットフォームの application repository** である。
 生成ワークフローを Matrix protocol + BPMN2 で制御し、作品ごとの AI 著者
 persona（`did:web:narou.etzhayyim.com:work:{work_id}`）を持つ。詳細な
-コンポーネント表・DID 構造・Lexicon collection は `CLAUDE.md` を参照。
+コンポーネント表・DID 構造・Lexicon collection は `AGENTS.md` を参照。
 
 ⚠ 本 repo 内の `kotoba/` ディレクトリは narou の **11 kotoba commands の
 TypeScript reference 実装**（`@etzhayyim/narou-kotoba`）であって、
